@@ -1,0 +1,74 @@
+html{
+  background-color: beige;
+}
+
+header{
+  text-align: center;
+  margin: 2rem;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.cmg--dashboard-container{
+  display:flex;
+  justify-content: space-between;
+}
+
+.cmg--detail-card{
+  border: 1px solid blanchedalmond;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.cmg-campaign-list{
+  flex-basis: 40%;
+}
+
+.cmg--detail-title{
+  margin: 0.5rem;
+}
+.cmg--detail-description{
+  padding: 1rem;
+}
+
+
+.btn {
+  color: #494949 ;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #f6b93b;
+  padding: 0.5rem;
+  border: 0.1rem solid #494949;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  border-color: #f6b93b;
+  margin: 1rem;
+}
+
+.cmg--detail-comment{
+  padding: 1rem;
+}
+
+.cmg--dashboard-commentBox{
+  font-family:sans-serif;
+  font-size:1.2em;
+}
+
+.cmg-campaign-history{
+  flex-basis: 50%;
+  margin-left: 5%;
+}
+
+.cmg--desc{
+  input{
+    margin-top: 1rem ;
+    margin-left: 1.8rem;
+  }
+}
+
+.cmg--name{
+  input{
+    margin-left: 4rem;
+  }
+}
