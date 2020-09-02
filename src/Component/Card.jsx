@@ -23,7 +23,7 @@ const Card = ({ data, handlers }) => {
         </span>
 
         <span
-        <span className="btn" onClick={()=>handlers.changeStatusHandler(data.id,(data.status == 'Running'? 'Stopped': 'Running'))}>
+         className="btn" onClick={()=>handlers.changeStatusHandler(data.id,(data.status == 'Running'? 'Stopped': 'Running'))}>
          {data.status == "Running" ? "Pause" : "Resume"}
        </span>
         <span className="btn" onClick={() => handlers.showHistory(data.id)}>

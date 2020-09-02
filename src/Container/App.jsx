@@ -2,16 +2,28 @@ import React from "react";
 
 import CampaignList from "../Component/CampaignList.jsx";
 import mockCampaignData from "../mock";
+import Pagination from "../Component/Pagination.jsx"
 import "./App.scss";
 
 const App = () => {
-  const [campaignData, setcampaignData] = React.useState(mockCampaignData);
+  const [masterData,setMasterData] = React.useState(mockCampaignData);
+  const [campaignData, setcampaignData] = React.useState([]);
   const [currentPage, setcurrentPage] = React.useState(1);
-  const [PerPage, setperPage] = React.useState(10);
+  const [perPage, setperPage] = React.useState(5);
   const [campaignName, setcampaignName] = React.useState();
   const [campaignDesc, setcampaignDesc] = React.useState();
   const [historyArr, setHistoryArr] = React.useState([]);
   const [selectedField, setselectedField] = React.useState([]);
+
+  //Get Current Data
+  React.useEffect(() => {
+    const indexLastPost = currentPage * perPage;
+    const indexOfFirstPost = indexLastPost - perPage;
+    const currentPost = masterData.slice(indexOfFirstPost,indexLastPost);
+    setcampaignData(currentPost);
+  }, [currentPage])
+  
+  const paginate = (number) => setcurrentPage(number);
 
   const handlers = {
     changeStatusHandler: (id, state) => {
@@ -104,7 +116,9 @@ const App = () => {
           history={historyArr}
         />
       </section>
-      <section className="cmg--dashboard-pagination">Pagination</section>
+      <section className="cmg--dashboard-pagination">
+      <Pagination postsPerPage={perPage} totalPosts={masterData.length} paginate={paginate}/>
+      </section>
     </>
   );
 };

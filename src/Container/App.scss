@@ -72,3 +72,24 @@ header{
     margin-left: 4rem;
   }
 }
+
+.pagination{
+list-style-type: none;
+display: inline;
+li{
+  border: 1px solid beige;
+  background-color:rgb(125, 125, 161);
+  padding: 1rem;
+  display: inline;
+
+  a{
+    text-decoration: none;
+  }
+}
+}
+
+
+
+nav{
+  margin-top: 2rem;
+}

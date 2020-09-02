@@ -1,12 +1,13 @@
 import React from "react";
 import Card from "./Card.jsx";
 
-const CampaignList = ({ dataArr, handlers, history }) => {
+const CampaignList = ({ dataArr, handlers, history, loading }) => {
+  if(loading)return <h2>Loading..</h2>
   return (
     <>
       <section className="cmg-campaign-list">
         {dataArr.map((data) => (
-          <Card data={data} handlers={handlers} />
+          <Card key={data.id} data={data} handlers={handlers} />
         ))}
       </section>
       {Boolean(history.length) && (
